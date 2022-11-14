@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap");
+@import "variables";
+@import "mixins";
+@import "flexbox";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background-desktop;
+  font-family: "Source Sans Pro";
+  margin: 24px 48px;
+  color: $text-color;
+
+  @include md {
+    background-color: $background-mobile;
+    margin: 12px 20px;
+  }
+}
+
+header {
+  @include text(600, 14, uppercase);
+  width: 100%;
+
+  p:nth-child(2) {
+    @include md {
+      display: none;
+    }
+  }
+
+  .logo-lang-help_box {
+    gap: 92px;
+
+    @include md {
+      gap: 24px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      border-radius: 50%;
+    }
+
+    .lang-help_box {
+      gap: 30px;
+
+      @include md {
+        gap: 12px;
+      }
+
+      .language,
+      .help {
+        gap: 4px;
+        cursor: pointer;
+
+        .fa-chevron-down {
+          @include icon(10);
+          padding-bottom: 2px;
+        }
+      }
+
+      .language:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 12px;
+        background-image: var(
+          --flag,
+          url("https://flagicons.lipis.dev/flags/4x3/lt.svg")
+        );
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .help {
+        p {
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+
+  .fa-circle-question,
+  .fa-user {
+    @include icon(16);
+  }
+
+  .login_box {
+    gap: 10px;
+    cursor: pointer;
+
+    @include md {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 48px;
+  margin: auto;
+  margin-top: 48px;
+
+  @include md {
+    margin-top: 24px;
+    padding-bottom: 36px;
+  }
+
+  .heading {
+    font-size: 36px;
+    margin-right: auto;
+    margin-bottom: 34px;
+
+    @include md {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  .menu {
+    width: 29.7%;
+
+    @include md {
+      width: 100%;
+    }
+  }
+
+  nav {
+    .menu-items {
+      width: 100%;
+      max-width: 358px;
+      gap: 12px;
+
+      @include md {
+        max-width: 100%;
+        flex-direction: row;
+      }
+
+      .menu-item {
+        @include text(600, 20, none);
+        width: 100%;
+        height: 52px;
+        margin-right: auto;
+        padding: 16px;
+        border-radius: 4px;
+        line-height: 24px;
+        cursor: pointer;
+
+        @include md {
+          @include text(600, 13, none);
+          height: 28px;
+          padding: 0;
+          text-align: center;
+          line-height: 14px;
+        }
+
+        p {
+          width: 100%;
+          position: relative;
+          // white-space: normal;
+
+          @include md {
+            padding-top: 74px;
+          }
+        }
+
+        p:before {
+          content: attr(data-step) ".";
+          margin-right: 12px;
+          margin-left: 8px;
+
+          @include md {
+            content: attr(data-step);
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 32px;
+            top: 50%;
+            left: 50%;
+            margin: 0;
+            padding: 0;
+            transform:translate(-50%,-50%);
+            background: $mobile-number;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .completed {
+        background-color: $background-mobile;
+
+        p:before {
+          content: "\f00c";
+          font-family: $font__fa;
+          font-weight: 900;
+          font-size: 12px;
+          padding: 4px;
+          margin-right: 12px;
+          margin-left: 4px;
+          color: #ffffff;
+          border-radius: 50%;
+          background-color: $primary-color;
+
+          @include md {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            font-size: 16px;
+            line-height: 32px;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+
+      .active {
+        background-color: $primary-color;
+        color: #ffffff;
+
+        @include md {
+          background: #ffffff;
+          color: $text-color;
+        }
+
+        p:after {
+          display: inline-block;
+          position: absolute;
+          left: 97%;
+          font-family: $font__fa;
+          content: "\f105";
+          font-size: 20px;
+          font-weight: 400;
+
+          @include md {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+
+  .form-container {
+    width: 66%;
+    max-width: 776px;
+    background-color: #ffffff;
+    padding-bottom: 32px;
+    
+    @include md {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 34px;
+      padding: 0;
+    }
+
+    form {
+      width: 100%;
+      padding: 33px;
+      margin-bottom: 30px;
+
+      @include md {
+        margin-bottom: 20px;
+        padding: 0;
+      }
+
+      label {
+        @include text(600, 16, none);
+
+        &:after {
+            content: "*";
+            color: $error;
+            padding-left: 3px;
+        }
+
+        &[for=notes]:after {
+            content: "";
+        }
+      }
+
+      input, textarea {
+        width: 100%;
+        height: 48px;
+        padding: 12px 19px;
+        border: 1px solid rgba(37, 51, 65, 0.3);
+        transition: box-shadow 0.2s ease 0s;
+        border-radius: 4px;
+        outline: none;
+        resize: none;
+
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &::placeholder {
+            font-family: "Source Sans Pro";
+            color: $faint-text;
+            font-size: 16px;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 3px rgba($primary-color, .4);
+            color: $text-color;
+        }
+
+        & #city {
+            width: 30%;
+        }
+      }
+
+      textarea {
+        height: auto;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 224px;
+        @include text(600, 14, none);
+        line-height: 20px;
+        padding: 15px 18px;
+        border: 2px solid rgba(37, 51, 65, 0.3);
+        border-radius: 4px;
+        background: $background-mobile;
+        outline: none;
+        cursor: pointer;
+
+        @include md {
+          max-width: 100%;
+        }
+      }
+
+      .active, .btn:hover {
+        border: 2px solid #41C2D5;
+        transition: box-shadow 0.2s ease 0s;
+        background: $secondary-color;
+    }
+
+      button:nth-child(3) {
+        padding: 15px 46px;
+      }
+    }
+
+    .row-full {
+        gap: 19px;
+    }
+
+    .submit-buttons {
+      padding-right: 33px;
+
+      @include md {
+        padding: 0;
+      }
+
+      button {
+        @include text(600, 14, uppercase);
+        width: 124px;
+        padding: 13.5px 27.5px;
+        border-radius: 4px;
+        letter-spacing: 0.05em;
+        border-style: none;
+        color: #ffffff;
+        background: $primary-color;
+        cursor: pointer;
+
+        &:after {
+          content: "\f105";
+          font-family: $font__fa;
+          font-size: 13px;
+          margin-left: 8px;
+        }
+
+        &:first-child {
+          background: #BDC1C6;
+
+          &:before {
+            content: "\f104";
+            font-family: $font__fa;
+            font-size: 13px;
+            margin-right: 8px;
+          }
+
+          &:after {
+            content: "";
+          }
+        }
+
+      }
+    }
+  }
+}

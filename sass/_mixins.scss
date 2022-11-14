@@ -1,0 +1,24 @@
+@mixin md {
+    @media (max-width: #{$break__mobile}) {
+        @content;
+    }
+ }
+
+@mixin flex($direction, $align, $justify, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin text($weight, $size, $transform) {
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    text-transform: $transform;
+}
+
+@mixin icon($size) {
+    font-size: $size;
+}

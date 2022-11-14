@@ -1,0 +1,105 @@
+@import "mixins";
+
+.row {
+    @include flex(row, center, center, 0);
+
+    @include md {
+        // width: 100%;
+        gap: 19px;
+    }
+}
+
+.row-full {
+    @include flex(row, center, center, 0);
+    width: 100%;
+
+    @include md {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+    }
+}
+
+.row-between {
+    @include flex(row, center, space-between, 0);
+}
+
+.row-gap {
+    @include flex(row, flex-start, flex-start, 42px);
+
+    @include md {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.row-xs-gap {
+    @include flex(row, flex-start, flex-start, 20px);
+    width: 100%;
+
+    @include md {
+        flex-direction: column;
+    }
+}
+
+.row-start {
+    @include flex(row, center, flex-start, 0);
+
+    // @include md {
+    //     flex-direction: column;
+    // }
+}
+
+.row-end {
+    @include flex(row, center, flex-end, 20px);
+    width: 100%;
+}
+
+.col {
+    @include flex(column, center, center, 0);
+
+    // @include md {
+    //     flex-direction: row;
+    // }
+}
+
+.col-full {
+    @include flex(column, center, center, 20px);
+    width: 100%;
+}
+
+.col-start {
+    @include flex(row, center, flex-start, 0);
+
+}
+
+.col-gap {
+    @include flex(column, flex-start, center, 6px);
+    width: 100%;
+}
+
+.col-gap-8 {
+    @include flex(column, flex-start, center, 10px);
+    width: 100%;
+
+}
+
+.col-7-gap {
+    @include flex(column, flex-start, center, 6px);
+        width: 57%;
+
+    @include md {
+        width: 62%;
+    }
+}
+
+.col-4-gap {
+    @include flex(column, flex-start, center, 6px);
+        width: 36%;
+
+    @include md {
+        width: 32.3%;
+        align-items: stretch;
+    }
+
+}

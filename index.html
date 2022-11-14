@@ -1,0 +1,127 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <link rel="stylesheet" href="css/all.css" />
+
+  </head>
+    <title>Step 2</title>
+  </head>
+  <body>
+    <header>
+      <div class="row-between">
+        <div class="row-between logo-lang-help_box">
+          <div class="logo"></div>
+          <div class="row lang-help_box">
+            <div class="row language">
+                <p id="ltu">LT</p>
+                <i class="fa fa-chevron-down arrow"></i>
+            </div>
+            <div class="row help">
+                <i class="fa-regular fa-circle-question"></i>
+                <p class="header--text">Pagalba</p>
+                <i class="fa fa-chevron-down arrow"></i>
+            </div>  
+          </div>
+        </div>
+        <div class="row login_box">
+            <i class="far fa-regular fa-user"></i>
+            <p class="text">Prisijungti</p>    
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <div class="row">
+            <h1 class="heading">Siuntos užakymas</h1>
+        </div>
+        <div class="row-gap">
+            <nav class="col-start menu">
+                <div class="col menu-items">
+                    <div class="row-start menu-item completed">
+                        <p>Siuntos informacija</p>
+                    </div>
+                    <div class="row-start menu-item active">
+                        <p data-step="2">Siuntėjas</p>
+                    </div>
+                    <div class="row-start menu-item">
+                        <p data-step="3">Gavėjas</p>
+                    </div>
+                    <div class="row-start menu-item">
+                        <p data-step="4">Apmokėjimas</p>
+                    </div>
+                </div>
+                
+            </nav>
+            <div class="col form-container">
+                <form>
+                    <div class="col-full">
+                        <div class="row-full">
+                            <div class="col-gap">
+                                <label for="sender-name">Siuntėjo vardas</label>
+                                <input type="text" id="sender-name" placeholder="Įveskite vardą"/>
+                            </div>
+                            <div class="col-gap input">
+                                <label for="sender-surname">Siuntėjo pavardė</label>
+                                <input type="text" id="sender-surname" placeholder="Įveskite pavardę"/>
+                            </div>
+                        </div>
+                        <div class="row-full">
+                            <div class="col-gap">
+                                <label for="tel-number">Siuntėjo telefono numeris</label>
+                                <input type="number" id="tel-number" placeholder="+370"/>
+                            </div>
+                            <div class="col-gap input">
+                                <label for="email">Siuntėjo el. paštas</label>
+                                <input type="email" id="email" placeholder="Įveskite el. paštą"/>
+                            </div>
+                        </div>
+                        <div class="row-full">
+                            <div class="col-gap">
+                                <label for="sender-adress">Siuntėjo adresas</label>
+                                <input type="text" id="sender-adress" placeholder="Įveskite tikslų adresą"/>
+                            </div>
+                            <div class="row-full">
+                                <div class="col-7-gap input">
+                                    <label for="city">Miestas</label>
+                                    <input type="text" id="city" placeholder="Įveskite miestą"/>
+                                </div>
+                                <div class="col-4-gap input">
+                                    <label for="post-index">Pašto kodas</label>
+                                    <input type="text" id="post-index"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-full">
+                            <div class="col-gap">
+                                <label for="notes">Pastabos</label>
+                                <textarea id="notes" rows="3" placeholder="Kitas telefono numeris ir pan."></textarea>
+                            </div>
+                        </div>
+                        <div class="row-full">
+                            <div class="col-gap-8">
+                                <label for="buttons">Kaip perduosite siuntą?</label>
+                                <div class="row-xs-gap buttonss" id="buttons">
+                                    <button class="btn">Paimti siuntą iš aukščiau nurodyto adreso</button>
+                                    <button class="btn">Siuntą pristatysiu į surinkimo tašką</button>
+                                    <button class="btn">Siuntą pristatysiu į jūsų sandėlį</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row-end submit-buttons">
+                    <button>Atgal</button>
+                    <button>Pirmyn</button>
+                </div>
+            </div>    
+        </div>
+
+    </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./js/index.js"></script>
+  </body>
+</html>
